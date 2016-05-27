@@ -7,9 +7,11 @@
   include 'common.php';
 ?>
 <nav>
+	<ol class="bredcrumb">
     <?php
       \N\Sys\Helper::MenuCreate($menu);
     ?>
+    </ol>
   </nav><h2>User Register</h2>
 	<div class="registre">
 		<form class="form-reg" action="<?= APP_W.'register/reg';?>" method="post">

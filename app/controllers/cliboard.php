@@ -6,7 +6,7 @@ namespace N\App\Controllers;
 	use N\App\Views\vDashboard;
 
 
-class Dashboard extends Controller{
+class Cliboard extends Controller{
 		protected $model;
 		protected $view;
 		
@@ -19,15 +19,3 @@ class Dashboard extends Controller{
 	function home(){
 			
 	}
-		
-	function adverts(){
-
-	}
-
-	function users(){
-		$users=$this->model->listUsers();
-		$this->json_out($users);
-
-	}
-
-}

@@ -9,6 +9,7 @@
 	 * 
 	 * */
 	
+	use N\Sys\Request;
 
 	class Core{
 		static private $controller;
@@ -37,9 +38,10 @@
 			}
 			static function router(){
 				//Coder::codear(self::$params);
-				extract(self::$params);
+				//extract(self::$params);
 				//Coder::code($p);
 			//redirects Control to respective controller
+
 			$route=(self::$controller!="")?self::$controller:'home';
 			$action=(self::$action!="")?self::$action:'home';
 			
@@ -64,7 +66,7 @@
 				else{ echo $action.": Unexistent method!";}
 			}
 			else{
-				self::$controller=new \N\App\Controllers\Error;
+				self::$controller=new \N\App\Controllers\Error(self::$params);
 				
 			}
 		}

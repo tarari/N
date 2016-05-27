@@ -1,17 +1,15 @@
+<?php 
+	$home=(isset($_SESSION['user']))?APP_W.'dashboard':'home';
+?>
 <body>
+<div class="container-fluid">
 <header>
-	<div class="page-header">
-		<div class="font-effect-anaglyph"><h1><a href="<?php
-		if (!isset($_SESSION['user'])){
-			echo APP_W;
-		}
-			else{
-				echo APP_W.'dashboard';
-				} ?>">
-		<?= $title; ?></a></h1></div>
-	</div>
+	<nav class="navbar-default">
+		<h1><a href="<?= $home;?>">
+		<?= $title; ?></a></h1>
+	
 	<?php 
-		if (!isset($_SESSION['user']->email)){
+		if (!isset($_SESSION['user'])){
 			echo '<div class="login">
 					<form class="form-log" method="POST" action="'.APP_W.'home/log">
 						<label for="email">User:<input type="text" name="email"></label>
@@ -25,6 +23,6 @@
 		}
 	?>
 	</div>
-	</div>
+	</nav>
 	
 </header>

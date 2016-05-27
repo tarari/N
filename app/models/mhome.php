@@ -3,6 +3,7 @@
 
 	use N\Sys\Model;
 	use N\App\Map\User;
+	use N\Sys\Session;
 
 	class mHome extends Model{
 
@@ -22,10 +23,13 @@
 			
 			//$this->debugDumpParams();
 			if($this->rowcount()==1){
-				\N\Sys\Session::set('user',new user($user['email'],
+				Session::set('user',new user($user['email'],
 				$user['idUser'],
 				$user['rol'],
 				$user['username']));
+				//echo $_SESSION['user']->email;
+
+
 				return true;
 			}
 			else{

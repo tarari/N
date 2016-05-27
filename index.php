@@ -17,6 +17,7 @@
 	$loader->addNamespace('N\App\Views', 'app/views');
 	$loader->addNamespace('N\App\Tpl', 'app/tpl');
 	$loader->addNamespace('N\App\Map', 'app/map');
+	
 
 
 

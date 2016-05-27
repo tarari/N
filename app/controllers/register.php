@@ -1,7 +1,10 @@
 <?php
 	namespace N\App\Controllers;
 	use N\Sys\Controller;
-
+	/**
+	 * @author Toni Jimenez
+	 * 
+	 */
 	class Register extends Controller{
 			protected $model;
 			protected $view;

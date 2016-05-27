@@ -160,29 +160,29 @@ $(document).ready(function(){
      	});
     
     //login
-    $('.form-log').on('submit',function(){
-    	console.log('click');
-    	var postData=$(this).serialize();
-        var formURL = $(this).attr("action");
-		$.ajax({
-			url:formURL,
-			data:postData,
-			method:'post',
-			dataType:'json',
-			beforeSend: function(){
-				loading_trans();
-			},
-			error: function(){
-				show_mesg('Error inici de sessió');
-			},
-			success:function(resp){
-				console.log(resp);
-                window.location.href=resp.redir;
+ //    $('.form-log').on('submit',function(){
+ //    	console.log('click');
+ //    	var postData=$(this).serialize();
+ //        var formURL = $(this).attr("action");
+	// 	$.ajax({
+	// 		url:formURL,
+	// 		data:postData,
+	// 		method:'post',
+	// 		dataType:'json',
+	// 		beforeSend: function(){
+	// 			loading_trans();
+	// 		},
+	// 		error: function(){
+	// 			show_mesg('Error inici de sessió');
+	// 		},
+	// 		success:function(resp){
+	// 			console.log(resp);
+ //                window.location.href=resp.redir;
                 
-			}
-		});
-		return false;
-	});
+	// 		}
+	// 	});
+	// 	return false;
+	// });
 	//
 	// Comprovació de passwords
 	//

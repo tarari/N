@@ -11,6 +11,7 @@
 
 			$this->model=new \N\App\Models\mError;
 			$this->view=new \N\App\Views\vError;
+			var_dump($this->params);
 		}
 		function home(){
 			

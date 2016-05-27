@@ -2,6 +2,13 @@
 	namespace N\App\Models;
 
 	use N\Sys\Model;
+	/**
+	 * MRegister - model of registering action
+	 * 
+	 * @author Toni Jimenez
+	 * @package Models
+	 * 
+	 */
 	
 	class mRegister extends Model{
 
@@ -25,8 +32,9 @@
 				return true;
 			}
 		}
+
 		function new_user($usrname,$email,$password,$rol){
-			echo 'eeee';
+			
 			$sql="CALL sp_new_user(:username,:email,:passw,:rol)";
 				$this->query($sql);
 				$this->bind(':username',$usrname);

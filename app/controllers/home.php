@@ -29,7 +29,7 @@
 		function home(){
 			
 		}
-		function log(){
+		function ajaxlog(){
 			
 			if (!empty($_POST['email']) && !empty($_POST['password'])) {
 				$email=filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);
@@ -44,6 +44,28 @@
 				
 				}else{
 					$this->json_out(array('redir'=>APP_W.'home'));
+				}
+		}
+	}
+		function log(){
+			
+			if (!empty($_POST['email']) && !empty($_POST['password'])) {
+				$email=filter_input(INPUT_POST,'email',FILTER_SANITIZE_EMAIL);
+				$password=md5(filter_input(INPUT_POST,'password',FILTER_SANITIZE_STRING));
+				$user=$this->model->login($email,$password);
+				if ($user==true){
+					//Session::set('user',new user());
+					//echo $_SESSION['user']->email;
+					//die;
+					setcookie('email',Session::get('user')->email,0,APP_W);
+					setcookie('rol',Session::get('user')->rol,0,APP_W);
+					header('Location:'.APP_W.'dashboard');
+					//$this->json_out(array('redir'=>APP_W.'dashboard'));
+
+				
+				}else{
+					header('Location:'.APP_W.'home');
+					//$this->json_out(array('redir'=>APP_W.'home'));
 				}
 		}
 	}

@@ -9,6 +9,6 @@
 	<h5>M fW- The good framework - Toni Jimenez 2016 - 
 	<?= $version; ?>
 	</h5></footer>
-	
+</div>	
 </body>
 </html>
